@@ -31,7 +31,21 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### Spec-Driven Development Compliance
+- [ ] All implementation will be generated via Claude Code (no manual coding)
+- [ ] Specs will be refined until generated output is correct
+- [ ] Implementation changes will require spec updates, not direct code edits
+
+### AI Governance Compliance
+- [ ] Claude Code will be used for all implementation
+- [ ] AI agents will follow written specs exactly
+- [ ] No requirements will be invented by AI agents
+- [ ] Spec-Kit Plus will be used for spec management
+
+### Phase Evolution Compliance
+- [ ] Plan follows the 5-phase evolution model (CLI → Full-Stack → AI Chatbot → Kubernetes → Distributed Cloud)
+- [ ] Current phase implementation will not break previous phases
+- [ ] Architecture supports incremental evolution
 
 ## Project Structure
 

@@ -1,55 +1,55 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: N/A -> 1.0.0
+Modified principles: N/A (initial creation)
+Added sections: All sections (initial creation)
+Removed sections: N/A
+Templates requiring updates:
+- .specify/templates/plan-template.md ✅ updated
+- .specify/templates/spec-template.md ✅ updated
+- .specify/templates/tasks-template.md ✅ updated
+- .specify/templates/commands/*.md ⚠ pending
+- README.md ⚠ pending
+Follow-up TODOs:
+- TODO(RATIFICATION_DATE): Need to set original adoption date
+- TODO(LAST_AMENDED_DATE): Set to today's date when finalized
+-->
+
+# The Evolution of Todo Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Development (NON-NEGOTIABLE)
+All development MUST be spec-driven. No source code will be written manually by the human. All implementation is generated via Claude Code. Specs are refined until the generated output is correct. The quality of specs is more important than speed. Violation of this rule invalidates the phase.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. AI Governance
+Claude Code for implementation, Spec-Kit Plus for spec management, OpenAI Agents SDK & ChatKit (Phase III+), MCP SDK for tool orchestration, Subagents and reusable agent skills are allowed. Manual coding, ad-hoc scripts outside the spec system, and silent architectural changes are disallowed. AI agents must follow the written spec exactly, ask for clarification when ambiguity exists, and never invent requirements.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Development Methodology
+The project strictly follows the Spec-Driven Development Lifecycle: Constitution → Spec → Plan → Tasks → Implement → Validate. Research is done concurrently, not upfront. Each phase is completed independently and validated before moving forward. Changes to implementation require spec updates, not direct code edits.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Phase Evolution Model
+The project has five phases: Phase I (CLI, In-Memory - Core logic & clean architecture), Phase II (Full-Stack Web - Persistent storage & APIs), Phase III (AI Chatbot - Natural language task control), Phase IV (Local Kubernetes - Cloud-native packaging), Phase V (Distributed Cloud - Event-driven AI system). Each phase builds on the previous one without breaking it.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Quality & Validation Rules
+Each phase must include clear acceptance criteria, functional validation steps, and reproducible setup instructions. A phase is considered complete only when all acceptance criteria are met, the system runs as specified, and the spec → output traceability is clear.
 
-### [PRINCIPLE_6_NAME]
+### VI. Project Structure Law
+The repository must clearly separate Specs, Plans, Tasks, Implementation, and Infrastructure (later phases). Generated code must remain organized, readable, and aligned with clean architecture principles.
 
+## Constitution Scope & Stability
+This Constitution is written once at project start. It applies to all five phases. It must not be modified during the project unless explicitly approved as a constitutional amendment. Phase-specific behavior belongs in specs, not here.
 
-[PRINCIPLE__DESCRIPTION]
+## AI & Agent Governance
+Allowed: Claude Code for implementation, Spec-Kit Plus for spec management, OpenAI Agents SDK & ChatKit (Phase III+), MCP SDK for tool orchestration, Subagents and reusable agent skills. Disallowed: Manual coding, ad-hoc scripts outside the spec system, Silent architectural changes. AI agents must follow the written spec exactly, ask for clarification when ambiguity exists, and never invent requirements.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Quality & Validation Rules
+Each phase must include clear acceptance criteria, functional validation steps, and reproducible setup instructions. A phase is considered complete only when all acceptance criteria are met, the system runs as specified, and the spec → output traceability is clear.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Educational & Evaluation Focus
+This project is evaluated on: Architectural clarity, Spec quality, AI governance, Incremental evolution, Reproducibility. Not on: Lines of code, UI polish (early phases), Feature quantity beyond scope.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This Constitution applies to all development phases. All implementation must follow the spec-driven lifecycle. Changes to the constitution require explicit approval as a constitutional amendment. The constitution supersedes all other development practices.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-01-08 | **Last Amended**: 2026-01-08

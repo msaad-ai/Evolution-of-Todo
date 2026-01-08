@@ -105,6 +105,7 @@
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
+  Per constitution, each phase must include clear acceptance criteria and functional validation steps.
 -->
 
 ### Measurable Outcomes
@@ -113,3 +114,9 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+
+### Constitution Compliance
+
+- **CC-001**: Spec includes clear acceptance criteria for validation
+- **CC-002**: Functional requirements are testable and measurable
+- **CC-003**: Spec supports reproducible setup instructions

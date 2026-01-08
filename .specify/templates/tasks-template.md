@@ -12,6 +12,8 @@ description: "Task list template for feature implementation"
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
+**Constitution Compliance**: All tasks must follow spec-driven development principles and AI governance rules.
+
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
@@ -249,3 +251,11 @@ With multiple developers:
 - Commit after each task or logical group
 - Stop at any checkpoint to validate story independently
 - Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
+
+## Constitution Compliance Check
+
+- [ ] All tasks implement spec-driven development (no manual coding)
+- [ ] AI agents follow written specs exactly
+- [ ] Tasks support incremental evolution model
+- [ ] Implementation changes require spec updates
+- [ ] Quality validation criteria are met per constitution
