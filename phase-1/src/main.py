@@ -6,14 +6,15 @@ Implements the main execution loop and orchestrates the application flow.
 from services import TaskService
 from ui import (
     display_menu, get_user_choice, get_task_input, get_task_id,
-    display_tasks, display_success, display_error, display_info
+    display_tasks, display_success, display_error, display_info, Prompt
 )
+from rich import print
 
 
 def main():
     """Main application loop."""
-    print("Welcome to the Todo Console Application!")
-    print("Manage your tasks efficiently with this simple CLI tool.")
+    print("[bold blue]Welcome to the Todo Console Application![/bold blue]")
+    print("[bold cyan]Manage your tasks efficiently with this simple CLI tool.[/bold cyan]")
 
     task_service = TaskService()
 
@@ -53,7 +54,7 @@ def main():
                     # Check if task exists
                     try:
                         current_task = task_service.get_task(task_id)
-                        print(f"Current task: {current_task}")
+                        print(f"[bold white]Current task: {current_task}[/bold white]")
                     except ValueError:
                         display_error(f"No task found with ID {task_id}")
                         continue
@@ -94,9 +95,9 @@ def main():
                     # Check if task exists
                     try:
                         current_task = task_service.get_task(task_id)
-                        print(f"About to delete task: {current_task}")
+                        print(f"[bold yellow]About to delete task: {current_task}[/bold yellow]")
 
-                        confirm = input(f"Are you sure you want to delete task {task_id}? (y/N): ").strip().lower()
+                        confirm = Prompt.ask("[bold red]Are you sure you want to delete task?[/bold red]", choices=["y", "n", "yes", "no"], default="n").strip().lower()
                         if confirm not in ['y', 'yes']:
                             display_info("Task deletion cancelled.")
                             continue
@@ -123,7 +124,7 @@ def main():
                     # Check if task exists
                     try:
                         current_task = task_service.get_task(task_id)
-                        print(f"Current task: {current_task}")
+                        print(f"[bold white]Current task: {current_task}[/bold white]")
                     except ValueError:
                         display_error(f"No task found with ID {task_id}")
                         continue
@@ -140,19 +141,19 @@ def main():
 
             elif choice == "6":
                 # Exit
-                print("\nThank you for using the Todo Console Application!")
-                print("Goodbye!")
+                print("\n[bold green]Thank you for using the Todo Console Application![/bold green]")
+                print("[bold green]Goodbye![/bold green]")
                 break
 
             else:
                 display_error("Invalid choice. Please enter a number between 1 and 6.")
 
         except KeyboardInterrupt:
-            print("\n\nReceived interrupt signal. Exiting...")
+            print("\n\n[bold red]Received interrupt signal. Exiting...[/bold red]")
             break
         except Exception as e:
             display_error(f"An unexpected error occurred: {str(e)}")
-            print("Please try again or contact support if the issue persists.")
+            print("[yellow]Please try again or contact support if the issue persists.[/yellow]")
 
 
 if __name__ == "__main__":
