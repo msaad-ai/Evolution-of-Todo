@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(python:*)",
+      "Bash(npm install next@15.1.0 --save-exact)",
+      "Bash(npm run dev)",
+      "Bash(tasklist)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(sqlite3 todo.db \".schema tasks\")",
+      "Bash(sqlite3 todo.db \"SELECT COUNT\\(*\\) as total_tasks FROM tasks;\")",
+      "Bash(source:*)"
+    ]
+  }
+}
