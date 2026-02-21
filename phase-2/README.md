@@ -1,13 +1,13 @@
-# Phase II - Full-Stack Todo Web Application
+# TaskForge - Organize smarter. Build better habits.
 
-Multi-user todo application with Next.js frontend, FastAPI backend, and Neon PostgreSQL database.
+A modern full-stack productivity application with Next.js frontend, FastAPI backend, and Neon PostgreSQL database.
 
 ## Overview
 
-Phase-2 transforms the Phase-1 console todo app into a modern full-stack web application with:
+TaskForge is your personal productivity companion that helps you create, manage, and complete tasks with ease:
 - **Frontend**: Next.js 15 + TypeScript + Tailwind CSS
 - **Backend**: FastAPI + SQLModel + Neon PostgreSQL
-- **Authentication**: Better Auth with JWT tokens
+- **Authentication**: JWT-based authentication with user isolation
 - **Features**: Add, View, Edit, Delete, and Mark Complete tasks
 
 ## Tech Stack

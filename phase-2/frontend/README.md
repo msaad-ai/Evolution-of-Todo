@@ -1,6 +1,6 @@
-# Phase-2 Frontend - Next.js Todo App
+# TaskForge - Organize smarter. Build better habits.
 
-Multi-user todo application frontend built with Next.js 15, TypeScript, Tailwind CSS, and Better Auth.
+Your personal productivity companion built with Next.js 15, TypeScript, Tailwind CSS, and JWT authentication.
 
 ## Features
 

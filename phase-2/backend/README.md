@@ -1,6 +1,6 @@
-# Phase-2 Backend - FastAPI Todo API
+# TaskForge Backend API
 
-JWT-secured REST API for multi-user todo application built with FastAPI, SQLModel, and Neon PostgreSQL.
+JWT-secured REST API for TaskForge - a personal productivity application built with FastAPI, SQLModel, and Neon PostgreSQL.
 
 ## Features
 

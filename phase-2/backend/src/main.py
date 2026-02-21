@@ -9,8 +9,8 @@ from src.api.tasks import router as tasks_router
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Phase-2 Todo API",
-    description="JWT-secured REST API for multi-user todo application",
+    title="TaskForge API",
+    description="JWT-secured REST API for TaskForge - Organize smarter. Build better habits.",
     version="1.0.0"
 )
 
@@ -42,7 +42,8 @@ def root():
     Root endpoint.
     """
     return {
-        "message": "Phase-2 Todo API",
+        "message": "TaskForge API",
+        "tagline": "Organize smarter. Build better habits.",
         "version": "1.0.0",
         "docs": "/docs"
     }
