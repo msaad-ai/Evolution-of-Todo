@@ -21,7 +21,7 @@ export default function TasksPage() {
     const userId = localStorage.getItem("user_id");
 
     if (!token || !userId) {
-      router.push("/signin");
+      router.replace("/signin");
       return;
     }
 

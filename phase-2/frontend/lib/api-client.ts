@@ -3,7 +3,7 @@
  */
 import { Task, TaskCreate, TaskUpdate } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://saad-ai-taskforge-ai.hf.space";
 
 /**
  * Get authentication token from localStorage.
@@ -80,6 +80,26 @@ async function apiRequest<T>(
 }
 
 /**
+ * Register a new user.
+ */
+export async function register(email: string, password: string): Promise<{ access_token: string; user: { id: number; email: string } }> {
+  return apiRequest(`/api/auth/register`, {
+    method: "POST",
+    body: JSON.stringify({ email, password }),
+  });
+}
+
+/**
+ * Login an existing user.
+ */
+export async function login(email: string, password: string): Promise<{ access_token: string; user: { id: number; email: string } }> {
+  return apiRequest(`/api/auth/login`, {
+    method: "POST",
+    body: JSON.stringify({ email, password }),
+  });
+}
+
+/**
  * Create a new task.
  */
 export async function createTask(taskData: TaskCreate): Promise<Task> {
@@ -88,7 +108,7 @@ export async function createTask(taskData: TaskCreate): Promise<Task> {
     throw new Error("User not authenticated");
   }
 
-  return apiRequest<Task>(`/api/${userId}/tasks`, {
+  return apiRequest<Task>(`/api/users/${userId}/tasks`, {
     method: "POST",
     body: JSON.stringify(taskData),
   });
@@ -103,7 +123,7 @@ export async function getTasks(): Promise<Task[]> {
     throw new Error("User not authenticated");
   }
 
-  return apiRequest<Task[]>(`/api/${userId}/tasks`);
+  return apiRequest<Task[]>(`/api/users/${userId}/tasks`);
 }
 
 /**
@@ -115,7 +135,7 @@ export async function getTask(taskId: number): Promise<Task> {
     throw new Error("User not authenticated");
   }
 
-  return apiRequest<Task>(`/api/${userId}/tasks/${taskId}`);
+  return apiRequest<Task>(`/api/users/${userId}/tasks/${taskId}`);
 }
 
 /**
@@ -130,7 +150,7 @@ export async function updateTask(
     throw new Error("User not authenticated");
   }
 
-  return apiRequest<Task>(`/api/${userId}/tasks/${taskId}`, {
+  return apiRequest<Task>(`/api/users/${userId}/tasks/${taskId}`, {
     method: "PUT",
     body: JSON.stringify(taskData),
   });
@@ -145,7 +165,7 @@ export async function deleteTask(taskId: number): Promise<void> {
     throw new Error("User not authenticated");
   }
 
-  return apiRequest<void>(`/api/${userId}/tasks/${taskId}`, {
+  return apiRequest<void>(`/api/users/${userId}/tasks/${taskId}`, {
     method: "DELETE",
   });
 }
@@ -159,7 +179,7 @@ export async function toggleComplete(taskId: number): Promise<Task> {
     throw new Error("User not authenticated");
   }
 
-  return apiRequest<Task>(`/api/${userId}/tasks/${taskId}/complete`, {
+  return apiRequest<Task>(`/api/users/${userId}/tasks/${taskId}/complete`, {
     method: "PATCH",
   });
 }

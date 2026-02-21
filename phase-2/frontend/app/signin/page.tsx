@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { mockSignIn } from "@/lib/mock-auth";
+import { login } from "@/lib/api-client";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -18,15 +18,15 @@ export default function SignInPage() {
     setLoading(true);
 
     try {
-      // Use mock authentication for testing
-      const { token, user } = await mockSignIn(email, password);
+      // Call real login API
+      const response = await login(email, password);
 
       // Store token and user info
-      localStorage.setItem("auth_token", token);
-      localStorage.setItem("user_id", user.id);
+      localStorage.setItem("auth_token", response.access_token);
+      localStorage.setItem("user_id", response.user.id.toString());
 
       // Redirect to tasks page
-      router.push("/tasks");
+      router.replace("/tasks");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign in failed. Please try again.");
     } finally {

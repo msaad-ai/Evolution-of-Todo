@@ -12,7 +12,7 @@ security = HTTPBearer()
 
 def get_current_user(
     credentials: HTTPAuthorizationCredentials = Depends(security)
-) -> str:
+) -> int:
     """
     Verify JWT token and extract authenticated user ID.
 
@@ -26,7 +26,7 @@ def get_current_user(
         credentials: HTTP Bearer credentials containing the JWT token
 
     Returns:
-        str: Authenticated user ID from token's "sub" claim
+        int: Authenticated user ID from token's "sub" claim
 
     Raises:
         HTTPException: 401 Unauthorized if token is missing, invalid, or expired
@@ -42,18 +42,20 @@ def get_current_user(
         )
 
         # Extract user_id from "sub" claim
-        user_id: str = payload.get("sub")
+        user_id_str: str = payload.get("sub")
 
-        if user_id is None:
+        if user_id_str is None:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid token: missing user ID",
                 headers={"WWW-Authenticate": "Bearer"},
             )
 
+        # Convert to integer
+        user_id = int(user_id_str)
         return user_id
 
-    except JWTError as e:
+    except (JWTError, ValueError) as e:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail=f"Invalid token: {str(e)}",
