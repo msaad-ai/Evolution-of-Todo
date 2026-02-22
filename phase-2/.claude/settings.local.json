@@ -16,7 +16,12 @@
       "Bash(npm run build)",
       "Bash(pkill -f \"next dev\")",
       "Bash(pkill:*)",
-      "Bash(pkill -f \"node.*next\")"
+      "Bash(pkill -f \"node.*next\")",
+      "Bash(find:*)",
+      "Bash(netstat:*)",
+      "Bash(pip install sqlmodel fastapi uvicorn)",
+      "Bash(pip install:*)",
+      "Bash(git add ../frontend/app/signin/page.tsx ../frontend/app/signup/page.tsx ../frontend/app/tasks/page.tsx ../frontend/lib/api-client.ts)"
     ]
   }
 }
